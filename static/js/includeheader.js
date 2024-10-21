@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadHeaderCSS() {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        link.href = 'css/header.css';
+        link.href = 'static/css/header.css';
         document.head.appendChild(link);
     }
 

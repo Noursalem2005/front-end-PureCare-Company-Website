@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.toggle');
     const menu = document.querySelector('nav ul');
     const landingContainer = document.getElementById('landing-container');
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function () {
         menu.classList.toggle('active');
         updateTextElementMargin();
     });
@@ -46,18 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Change content function
-    window.changeContent = function(index) {
+    window.changeContent = function (index) {
         if (menu.classList.contains('active')) {
             menu.classList.remove('active');
             updateTextElementMargin();
-        setTimeout(() => {
+            setTimeout(() => {
+                landingContainer.innerHTML = generateContent(index);
+                animateBullets(index);
+            }, 300); // Delay to allow menu to close first
+        } else {
             landingContainer.innerHTML = generateContent(index);
             animateBullets(index);
-        }, 300); // Delay to allow menu to close first
-    } else {
-        landingContainer.innerHTML = generateContent(index);
-        animateBullets(index);
-    }
+        }
     };
 
     // Animate bullets function
@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     changeContent(0);
     const serviceData = [
         {
-            icon:'fas fa-desktop fa-3x',
-            title:'Fast Handling',
-            text:'adipisicing elit. Facilis saepe est sequi consequuntur illo libero eum eligendi, consectetur veniam, at voluptatem'
+            icon: 'fas fa-desktop fa-3x',
+            title: 'Fast Handling',
+            text: 'adipisicing elit. Facilis saepe est sequi consequuntur illo libero eum eligendi, consectetur veniam, at voluptatem'
         },
         {
             icon: 'fas fa-cog fa-3x',
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
             text: 'adipisicing elit. Facilis saepe est sequi consequuntur illo libero eum eligendi, consectetur veniam, at voluptatem'
         }
     ];
-    function generateServiceSection(){
+    function generateServiceSection() {
         const serviceContainer = document.createElement('div');
         serviceContainer.className = 'services';
         serviceContainer.id = 'services';
@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const mainHeadingDiv = document.createElement('div');
         mainHeadingDiv.className = 'main-heading';
-        
+
         const heading = document.createElement('h2');
         heading.innerText = 'Services';
-        
+
         const paragraph = document.createElement('p');
         paragraph.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et earum vitae aliquid recusandae est, odio dicta facilis neque';
 
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         containerDiv.appendChild(mainHeadingDiv);
         containerDiv.appendChild(servicesContentDiv);
-        serviceContainer.appendChild(containerDiv); 
+        serviceContainer.appendChild(containerDiv);
 
         return serviceContainer;
     }
@@ -207,18 +207,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const portfolioItems = document.querySelectorAll('.port-content .box');
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
             const filter = this.getAttribute('data-filter');
-           portfolioItems.forEach(item => {
-    if (filter === 'all' || item.classList.contains(`filter-${filter}`)) {
-        item.style.display = 'block';
-    } else {
-        item.style.display = 'none';
-    }
-});
+            portfolioItems.forEach(item => {
+                if (filter === 'all' || item.classList.contains(`filter-${filter}`)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
     });
     const observer3 = new IntersectionObserver((entries, observer) => {
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const moreButton = document.querySelector('.more');
 
-    moreButton.addEventListener('click', function(event) {
+    moreButton.addEventListener('click', function (event) {
         event.preventDefault();
         this.classList.add('loading');
 
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('background-video');
 
     // Smooth scroll to target section
-    seeMoreBtn.addEventListener('click', function(event) {
+    seeMoreBtn.addEventListener('click', function (event) {
         event.preventDefault();
         const targetElement = document.getElementById('target-section');
         if (targetElement) {
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Play/Pause control for the video
-    playPauseBtn.addEventListener('click', function() {
+    playPauseBtn.addEventListener('click', function () {
         if (video.paused) {
             video.play();
             playPauseBtn.textContent = 'Pause';
@@ -355,153 +355,153 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    fetch('testimonials.json')
-    .then(response => response.json())
-    .then(data => {
-        const testimonialsData = data;
+    fetch('static/data/testimonials.json')
+        .then(response => response.json())
+        .then(data => {
+            const testimonialsData = data;
 
-        // Generate testimonials content
-        const testimonialsContainer = document.querySelector('.testi');
-        const bulletsContainer = testimonialsContainer.querySelector('.bullets');
-        const contentContainer = testimonialsContainer.querySelector('.content');
-        const skillsContainer = document.querySelector('.our-skills'); // Initialize skillsContainer here
+            // Generate testimonials content
+            const testimonialsContainer = document.querySelector('.testi');
+            const bulletsContainer = testimonialsContainer.querySelector('.bullets');
+            const contentContainer = testimonialsContainer.querySelector('.content');
+            const skillsContainer = document.querySelector('.our-skills'); // Initialize skillsContainer here
 
-        function generateTestimonialContent(index) {
-            const testimonial = testimonialsData[index];
-            contentContainer.innerHTML = `
+            function generateTestimonialContent(index) {
+                const testimonial = testimonialsData[index];
+                contentContainer.innerHTML = `
                 <img src="${testimonial.img}" alt="testi">
                 <div class="text">${testimonial.text}
                     <p>${testimonial.author}</p>
                 </div>
             `;
-            generateSkillsContent(testimonial.skills);
-        }
+                generateSkillsContent(testimonial.skills);
+            }
 
-        function generateBullets() {
-            bulletsContainer.innerHTML = '';
-            testimonialsData.forEach((_, index) => {
-                const bullet = document.createElement('li');
-                if (index === 0) bullet.classList.add('active');
-                bullet.addEventListener('click', () => {
-                    updateTestimonial(index);
+            function generateBullets() {
+                bulletsContainer.innerHTML = '';
+                testimonialsData.forEach((_, index) => {
+                    const bullet = document.createElement('li');
+                    if (index === 0) bullet.classList.add('active');
+                    bullet.addEventListener('click', () => {
+                        updateTestimonial(index);
+                    });
+                    bulletsContainer.appendChild(bullet);
                 });
-                bulletsContainer.appendChild(bullet);
+                updateBulletVisibility(0);
+            }
+
+            function updateTestimonial(index) {
+                generateTestimonialContent(index);
+                const bullets = bulletsContainer.querySelectorAll('li');
+                bullets.forEach((bullet, i) => {
+                    bullet.classList.toggle('active', i === index);
+                });
+                updateBulletVisibility(index);
+            }
+
+            function updateBulletVisibility(activeIndex) {
+                const bullets = bulletsContainer.querySelectorAll('li');
+                bullets.forEach((bullet, i) => {
+                    const distance = Math.abs(i - activeIndex);
+                    if (distance === 0) {
+                        bullet.style.opacity = '1';
+                        bullet.style.display = 'inline-block';
+                    } else if (distance < 2) {
+                        bullet.style.opacity = '0.5';
+                        bullet.style.display = 'inline-block';
+                    } else if (distance < 4) {
+                        bullet.style.opacity = '0.2';
+                        bullet.style.display = 'inline-block';
+                    } else {
+                        bullet.style.opacity = '0';
+                        bullet.style.display = 'none';
+                    }
+                });
+            }
+
+            function updateTestimonial(index) {
+                generateTestimonialContent(index);
+                const bullets = bulletsContainer.querySelectorAll('li');
+                bullets.forEach((bullet, i) => {
+                    bullet.classList.toggle('active', i === index);
+                });
+                updateBulletVisibility(index);
+            }
+
+            generateTestimonialContent(0);
+            generateBullets();
+
+            // Add arrows for navigation
+            const arrowLeft = document.createElement('div');
+            arrowLeft.className = 'arrow arrow-left';
+            arrowLeft.innerHTML = '&#9664;'; // Left arrow symbol
+            arrowLeft.addEventListener('click', () => {
+                const activeIndex = Array.from(bulletsContainer.children).findIndex(bullet => bullet.classList.contains('active'));
+                const newIndex = (activeIndex - 1 + testimonialsData.length) % testimonialsData.length;
+                updateTestimonial(newIndex);
             });
-            updateBulletVisibility(0);
-        }
 
-        function updateTestimonial(index) {
-            generateTestimonialContent(index);
-            const bullets = bulletsContainer.querySelectorAll('li');
-            bullets.forEach((bullet, i) => {
-                bullet.classList.toggle('active', i === index);
+            const arrowRight = document.createElement('div');
+            arrowRight.className = 'arrow arrow-right';
+            arrowRight.innerHTML = '&#9654;'; // Right arrow symbol
+            arrowRight.addEventListener('click', () => {
+                const activeIndex = Array.from(bulletsContainer.children).findIndex(bullet => bullet.classList.contains('active'));
+                const newIndex = (activeIndex + 1) % testimonialsData.length;
+                updateTestimonial(newIndex);
             });
-            updateBulletVisibility(index);
-        }
 
-        function updateBulletVisibility(activeIndex) {
-            const bullets = bulletsContainer.querySelectorAll('li');
-            bullets.forEach((bullet, i) => {
-                const distance = Math.abs(i - activeIndex);
-                if (distance === 0) {
-                    bullet.style.opacity = '1';
-                    bullet.style.display = 'inline-block';
-                } else if (distance < 2) {
-                    bullet.style.opacity = '0.5';
-                    bullet.style.display = 'inline-block';
-                } else if (distance < 4) {
-                    bullet.style.opacity = '0.2';
-                    bullet.style.display = 'inline-block';
-                } else {
-                    bullet.style.opacity = '0';
-                    bullet.style.display = 'none';
-                }
-            });
-        }
-        
-        function updateTestimonial(index) {
-            generateTestimonialContent(index);
-            const bullets = bulletsContainer.querySelectorAll('li');
-            bullets.forEach((bullet, i) => {
-                bullet.classList.toggle('active', i === index);
-            });
-            updateBulletVisibility(index);
-        }
+            testimonialsContainer.appendChild(arrowLeft);
+            testimonialsContainer.appendChild(arrowRight);
 
-        generateTestimonialContent(0);
-        generateBullets();
-
-        // Add arrows for navigation
-        const arrowLeft = document.createElement('div');
-        arrowLeft.className = 'arrow arrow-left';
-        arrowLeft.innerHTML = '&#9664;'; // Left arrow symbol
-        arrowLeft.addEventListener('click', () => {
-            const activeIndex = Array.from(bulletsContainer.children).findIndex(bullet => bullet.classList.contains('active'));
-            const newIndex = (activeIndex - 1 + testimonialsData.length) % testimonialsData.length;
-            updateTestimonial(newIndex);
-        });
-
-        const arrowRight = document.createElement('div');
-        arrowRight.className = 'arrow arrow-right';
-        arrowRight.innerHTML = '&#9654;'; // Right arrow symbol
-        arrowRight.addEventListener('click', () => {
-            const activeIndex = Array.from(bulletsContainer.children).findIndex(bullet => bullet.classList.contains('active'));
-            const newIndex = (activeIndex + 1) % testimonialsData.length;
-            updateTestimonial(newIndex);
-        });
-
-        testimonialsContainer.appendChild(arrowLeft);
-        testimonialsContainer.appendChild(arrowRight);
-
-        // Generate skills content
-        function generateSkillsContent(skills) {
-            skillsContainer.innerHTML = `
+            // Generate skills content
+            function generateSkillsContent(skills) {
+                skillsContainer.innerHTML = `
                 <h2>Our Skills</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, natus exercitationem at velit asperiores aperiam veritatis iste quod distinctio neque officiis sunt reiciendis id accusamus tempora nihil, eligendi numquam sed?</p>
             `;
-            skills.forEach(skill => {
-                const holder = document.createElement('div');
-                holder.className = 'holder';
-                holder.innerHTML = `
+                skills.forEach(skill => {
+                    const holder = document.createElement('div');
+                    holder.className = 'holder';
+                    holder.innerHTML = `
                     <h4>${skill.skill}</h4>
                     <div class="prog">
                         <span style="width:0" data-progress="${skill.progress}"></span>
                         <div class="percentage">${skill.progress}</div>
                     </div>
                 `;
-                skillsContainer.appendChild(holder);
-            });
-        
-            // Animate skills progress bars
-            const observer6 = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const spans = entry.target.querySelectorAll('.prog span');
-                        const percentages = entry.target.querySelectorAll('.prog .percentage');
-                        spans.forEach(span => {
-                            span.style.width = span.getAttribute('data-progress');
-                        });
-                        percentages.forEach(percentage => {
-                            setTimeout(() => {
-                                percentage.style.opacity = '1';
-                                percentage.style.right = '10px';
-                            }, 1000); // Delay to match the progress bar animation
-                        });
-                        observer.unobserve(entry.target); // Stop observing once it becomes visible
-                    }
+                    skillsContainer.appendChild(holder);
                 });
-            }, {
-                threshold: 0.2 // Trigger when 20% of the element is visible
-            });
-        
-            const skillHolders = skillsContainer.querySelectorAll('.holder');
-            skillHolders.forEach(holder => observer6.observe(holder));
-        }
-    });
+
+                // Animate skills progress bars
+                const observer6 = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const spans = entry.target.querySelectorAll('.prog span');
+                            const percentages = entry.target.querySelectorAll('.prog .percentage');
+                            spans.forEach(span => {
+                                span.style.width = span.getAttribute('data-progress');
+                            });
+                            percentages.forEach(percentage => {
+                                setTimeout(() => {
+                                    percentage.style.opacity = '1';
+                                    percentage.style.right = '10px';
+                                }, 1000); // Delay to match the progress bar animation
+                            });
+                            observer.unobserve(entry.target); // Stop observing once it becomes visible
+                        }
+                    });
+                }, {
+                    threshold: 0.2 // Trigger when 20% of the element is visible
+                });
+
+                const skillHolders = skillsContainer.querySelectorAll('.holder');
+                skillHolders.forEach(holder => observer6.observe(holder));
+            }
+        });
 
     const plans = document.querySelectorAll('.plan');
     plans.forEach(plan => {
-        plan.addEventListener('click', function() {
+        plan.addEventListener('click', function () {
             plans.forEach(p => p.classList.remove('selected'));
             this.classList.add('selected');
         });
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const form = document.querySelector('.subs form');
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
         const emailInput = form.querySelector('input[type="email"]');
         const email = emailInput.value.trim();
@@ -559,7 +559,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const form2 = document.querySelector('.contact-form form');
-    form2.addEventListener('submit', async function(event) {
+    form2.addEventListener('submit', async function (event) {
         event.preventDefault();
         const name = form2.querySelector('#name').value.trim();
         const email = form2.querySelector('#email').value.trim();
@@ -583,14 +583,14 @@ document.addEventListener('DOMContentLoaded', function() {
             date: date
         };
 
-            const response = await fetch('https://back-end-seven-beta.vercel.app/submit-contact-form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-       
+        const response = await fetch('https://nour-back.vercel.app/submit-contact-form', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
     });
 
     // Email validation function
@@ -599,11 +599,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return re.test(String(email).toLowerCase());
     }
 
-    
+
 
     const links = document.querySelectorAll('.footer-links a');
     links.forEach(link => {
-        link.addEventListener('click', function(event) {
+        link.addEventListener('click', function (event) {
             event.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
@@ -615,17 +615,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         // Dynamic year update
-    const yearElement = document.querySelector('.footer-bottom p');
-    const currentYear = new Date().getFullYear();
-    yearElement.innerHTML = `&copy; ${currentYear} Your Company. All rights reserved.`;
+        const yearElement = document.querySelector('.footer-bottom p');
+        const currentYear = new Date().getFullYear();
+        yearElement.innerHTML = `&copy; ${currentYear} Your Company. All rights reserved.`;
 
-    // Social media link tracking
-    const socialLinks = document.querySelectorAll('.footer-social a');
-    socialLinks.forEach(link => {
-        link.addEventListener('click    ', function() {
-            console.log(`Social media link clicked: ${this.href}`);
-            // Here you can add your analytics tracking code
+        // Social media link tracking
+        const socialLinks = document.querySelectorAll('.footer-social a');
+        socialLinks.forEach(link => {
+            link.addEventListener('click    ', function () {
+                console.log(`Social media link clicked: ${this.href}`);
+                // Here you can add your analytics tracking code
+            });
         });
     });
-});
 });

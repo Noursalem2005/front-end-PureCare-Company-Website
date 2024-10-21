@@ -259,7 +259,7 @@ header .form:hover {
 /* start landing page */
 .landing {
     min-height: 100vh;
-    background-image: url('../img/background.jpg');
+    background-image: url('../image/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -505,7 +505,7 @@ header .form:hover {
     padding-bottom: 100px;
     height: 600px;
     position: relative;
-    background-image: url('../img/back1.jpg'); /* Set the second image as the background */
+    background-image: url('../image/back1.jpg'); /* Set the second image as the background */
     background-size: cover;
     background-position: center;
     opacity: 0;

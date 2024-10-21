@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 try {
-                    const response = await fetch('back-isormi0ds-noursalem2005s-projects.vercel.app', { // Updated to the correct endpoint
+                    const response = await fetch('back-isormi0ds-noursalem2005s-projects.vercel.app//submit-form', { // Updated to the correct endpoint
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

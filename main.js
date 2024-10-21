@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: date
         };
 
-            const response = await fetch('https://back-end-seven-beta.vercel.app/?vercelToolbarCode=aByppBax_dAnZJ1/submit-contact-form', {
+            const response = await fetch('https://back-end-seven-beta.vercel.app/submit-contact-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

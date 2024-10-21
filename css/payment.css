@@ -1,0 +1,54 @@
+
+/*.payment section*/
+.payment {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure the stats section is above other elements */
+}
+.payment .container {
+    max-width: 600px;
+    margin: 70px auto ;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment .main-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment .form-group {
+    margin-bottom: 15px;
+}
+
+.payment .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.payment .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.payment button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.payment button:hover {
+    background-color: darken(var(--main-color), 10%);
+}
+/*end payment */

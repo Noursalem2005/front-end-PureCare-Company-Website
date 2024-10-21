@@ -1,0 +1,306 @@
+:root{
+    --main-color:#19c8fa;
+    --transparent-color: rgb(15 116 143 / 70%);
+}
+/* global rules */
+* {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style-type: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.main-heading{
+    text-align: center;
+    padding: 100px;
+}
+.main-heading h2{
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+.main-heading h2::before{
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 120px;
+    height: 2px;
+    background-color: #333;
+    transform: translateX(-50%);
+}
+.main-heading h2::after{
+    content: '';
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    transform: translateX(-50%);
+    background-color: white;
+}
+.main-heading p {
+    width: 550px;
+    margin: 100px auto 0;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+}
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 80px;
+    max-height: 100px;
+}
+
+header .container .logo img {
+    width: 100%;
+    height: auto;
+}
+
+header .container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 30px);
+    height: 1px;
+    background-color: #a2a2a2;
+    left: 15px;
+}
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+head nav .toggle {
+    font-size: 22px;
+}
+
+@media(min-width:768px) {
+    header .container nav .toggle {
+        display: none;
+    }
+}
+
+header .container .logo {
+    flex: 0 1 auto;
+    max-width: 25%;
+}
+
+header .container nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container nav ul li a {
+    color: #000;
+    text-decoration: none;
+    padding: 45px 10px;
+    display: block;
+}
+
+@keyframes growMenu {
+    0% {
+        transform: skew(48deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleY(1);
+        transform: skew(0deg);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    header .container nav ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 112%;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        align-items: flex-start;
+        text-align: center;
+        transform-origin: top; /* Set the origin for the scale transformation */
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Add transition for animation */
+        transform: scaleY(0); /* Initially hide the menu by scaling it down */
+        opacity: 0;
+        background-color: rgb(0 0 0 /45%);
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    header .container nav .toggle {
+        display: block; /* Show the toggle icon */
+        cursor: pointer;
+    }
+
+    header .container nav ul.active {
+        display: flex; /* Show the menu when active */
+        animation: growMenu 0.3s ease-in-out forwards; /* Apply the growMenu animation */
+    }
+
+    header .container nav ul li a {
+        padding: 11px !important;
+    }
+
+    header .container nav ul li a::before {
+        content: "\f105";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 10px;
+        display: inline-block;
+        color: var(--main-color);
+        transform-origin: center;
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out; /* Apply transition to the initial state */
+    }
+
+    header .container nav ul li a:hover::before {
+        color: var(--main-color);
+        transform: scale(1);
+    }
+}
+
+header .container nav ul li a {
+    color: #000;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    position: relative;
+}
+
+header .container nav ul li {
+    position: relative;
+}
+
+header .container nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+header .container nav ul li a:hover {
+    transform: translateY(-3px);
+}
+
+header .container nav ul li a:hover::after {
+    width: 100%;
+}
+
+header .container nav ul li a.home {
+    color: var(--main-color);
+}
+
+@keyframes coloring {
+    0% {
+        color: #000;
+    }
+    100% {
+        color: var(--main-color);
+    }
+}
+
+header .container nav ul li a:not(.home):hover {
+    animation: coloring 0.4s ease-in-out forwards;
+}
+
+header .form {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+}
+
+header .form::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 2px;
+    height: 0;
+    background-color: var(--main-color);
+    transform: translateY(-50%);
+    transition: height 0.3s ease-in-out;
+}
+
+header .form:hover::before {
+    height: 125%;
+}
+
+header .form i {
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    transform: translateY(-50%);
+    right: 0;
+    cursor: pointer;
+}
+
+header .form:hover {
+    animation: coloring 0.4s ease-in-out forwards;
+}
+
+/* Global heading styles */
+h2 {
+    font-size: 2.5em; /* Ensure consistent size */
+    color: var(--main-color); /* Ensure consistent color */
+    margin: 0; /* Remove margin */
+}

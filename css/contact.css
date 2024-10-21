@@ -1,0 +1,75 @@
+.contact-page {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.contact-page .container {
+    max-width: 800px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+}
+
+.contact-page .main-heading h2 {
+    font-size: 2.5em; /* Ensure it matches the header */
+    color: var(--main-color); /* Match header color */
+    margin: 0; /* Avoid extra margin */
+}
+
+.contact-page .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-page .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.contact-page .form-group input,
+.contact-page .form-group textarea,
+.contact-page .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-page .form-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact-page button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-page button:hover {
+    background-color: #0056b3; /* Manually specify a darker shade of the main color */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+input:invalid {
+    border-color: red;
+}

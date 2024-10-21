@@ -1,0 +1,112 @@
+[
+    {
+        "img": "img/first1.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, natus exercitationem at velit asperiores aperiam veritatis iste quod distinctio neque officiis sunt reiciendis id accusamus tempora nihil, eligendi numquam sed?",
+        "author": "John Doe, CEO",
+        "skills": [
+            { "skill": "Happy Clients", "progress": "95%" },
+            { "skill": "Safety", "progress": "45%" },
+            { "skill": "Cautiousness", "progress": "90%" },
+            { "skill": "Operations", "progress": "75%" }
+        ]
+    },
+    {
+        "img": "img/sec2.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, natus exercitationem at velit asperiores aperiam veritatis iste quod distinctio neque officiis sunt reiciendis id accusamus tempora nihil, eligendi numquam sed?",
+        "author": "Jane Smith, CTO",
+        "skills": [
+            { "skill": "Happy Clients", "progress": "80%" },
+            { "skill": "Safety", "progress": "60%" },
+            { "skill": "Cautiousness", "progress": "70%" },
+            { "skill": "Operations", "progress": "85%" }
+        ]
+    },
+    {
+        "img": "img/thrid3.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, natus exercitationem at velit asperiores aperiam veritatis iste quod distinctio neque officiis sunt reiciendis id accusamus tempora nihil, eligendi numquam sed?",
+        "author": "Alice Johnson, CFO",
+        "skills": [
+            { "skill": "Happy Clients", "progress": "90%" },
+            { "skill": "Safety", "progress": "50%" },
+            { "skill": "Cautiousness", "progress": "85%" },
+            { "skill": "Operations", "progress": "65%" }
+        ]
+    },
+    {
+        "img": "img/skill1.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque. Voluptatum, doloremque. Quisquam, doloremque. Voluptatum, doloremque.",
+        "author": "Ahmed Ali, Medical Director",
+        "skills": [
+            { "skill": "Patient Care", "progress": "88%" },
+            { "skill": "Efficiency", "progress": "70%" },
+            { "skill": "Innovation", "progress": "75%" },
+            { "skill": "Teamwork", "progress": "80%" }
+        ]
+    },
+    {
+        "img": "img/skill2.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque. Voluptatum, doloremque. Quisquam, doloremque. Voluptatum, doloremque.",
+        "author": "Fatima Hassan, Nurse",
+        "skills": [
+            { "skill": "Patient Care", "progress": "92%" },
+            { "skill": "Safety", "progress": "85%" },
+            { "skill": "Cautiousness", "progress": "78%" },
+            { "skill": "Operations", "progress": "80%" }
+        ]
+    },
+    {
+        "img": "img/fourth4.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque. Voluptatum, doloremque. Quisquam, doloremque. Voluptatum, doloremque.",
+        "author": "Mohammed Al-Sayed, Surgeon",
+        "skills": [
+            { "skill": "Precision", "progress": "95%" },
+            { "skill": "Safety", "progress": "90%" },
+            { "skill": "Cautiousness", "progress": "85%" },
+            { "skill": "Operations", "progress": "88%" }
+        ]
+    },
+    {
+        "img": "img/fifth5.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque. Voluptatum, doloremque. Quisquam, doloremque. Voluptatum, doloremque.",
+        "author": "Layla Ibrahim, Pharmacist",
+        "skills": [
+            { "skill": "Accuracy", "progress": "90%" },
+            { "skill": "Efficiency", "progress": "85%" },
+            { "skill": "Innovation", "progress": "80%" },
+            { "skill": "Teamwork", "progress": "75%" }
+        ]
+    },
+    {
+        "img": "img/seventh.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque. Voluptatum, doloremque. Quisquam, doloremque. Voluptatum, doloremque.",
+        "author": "Omar Khaled, Therapist",
+        "skills": [
+            { "skill": "Patient Care", "progress": "85%" },
+            { "skill": "Safety", "progress": "80%" },
+            { "skill": "Cautiousness", "progress": "75%" },
+            { "skill": "Operations", "progress": "70%" }
+        ]
+    },
+    {
+        "img": "img/sixth.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque. Voluptatum, doloremque. Quisquam, doloremque. Voluptatum, doloremque.",
+        "author": "Sara Ahmed, Dentist",
+        "skills": [
+            { "skill": "Precision", "progress": "90%" },
+            { "skill": "Safety", "progress": "85%" },
+            { "skill": "Cautiousness", "progress": "80%" },
+            { "skill": "Operations", "progress": "75%" }
+        ]
+    },
+    {
+        "img": "img/eighth.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque. Voluptatum, doloremque. Quisquam, doloremque. Voluptatum, doloremque.",
+        "author": "Hassan Youssef, Radiologist",
+        "skills": [
+            { "skill": "Accuracy", "progress": "88%" },
+            { "skill": "Efficiency", "progress": "82%" },
+            { "skill": "Innovation", "progress": "78%" },
+            { "skill": "Teamwork", "progress": "80%" }
+        ]
+    }
+]

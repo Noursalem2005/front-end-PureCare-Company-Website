@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function () {
             date: date
         };
 
-        const response = await fetch('https://nour-back.vercel.app/submit-contact-form', {
+        const response = await fetch('http://localhost:8000/submit-form-2', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

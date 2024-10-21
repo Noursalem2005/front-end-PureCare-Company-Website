@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     medical_issue: formData.get('medical_issue'),
                     preferred_contact: formData.get('preferred_contact')
                 };
-                    const response = await fetch('http://localhost:8000/submit-form', {
+                    const response = await fetch('https://html-css-js-2nd-project.vercel.app/?vercelToolbarCode=SAo4_LhGccYlSeL', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

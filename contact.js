@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 try {
-                    const response = await fetch('https://back-end-seven-beta.vercel.app/submit-form', { // Updated to the correct endpoint
+                    const response = await fetch('https://back-end-seven-beta.vercel.app', { // Updated to the correct endpoint
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

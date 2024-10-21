@@ -1159,7 +1159,22 @@ header .form:hover {
 .skills .testi .arrow-right {
     right: -40px;
 }
-
+@media(max-width:767px){
+    .skills .testi .arrow {
+        position: absolute;
+        top: 90%;
+        font-size: 24px;
+        color: #777;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    .skills .testi .arrow-left {
+        left: 60px;
+    }
+    .skills .testi .arrow-right {
+        right: 55px;
+    }
+}
 .our-skills {
     margin-top: 50px;
 }

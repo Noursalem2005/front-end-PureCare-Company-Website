@@ -73,6 +73,21 @@ ul {
     transform: translateX(-50%);
     background-color: white;
 }
+@media (max-width: 600px) {
+    .main-heading h2 {
+        font-size: 30px; /* Adjust font size */
+        margin: 0 auto 30px; /* Adjust margin */
+    }
+    .main-heading h2::before {
+        bottom: -20px; /* Adjust position */
+        width: 100px; /* Adjust width */
+    }
+    .main-heading h2::after {
+        bottom: -28px; /* Adjust position */
+        width: 12px; /* Adjust size */
+        height: 12px; /* Adjust size */
+    }
+}
 .main-heading p {
     width: 550px;
     margin: 100px auto 0;

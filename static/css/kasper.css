@@ -386,14 +386,14 @@ header .form:hover {
     text-align: center;
     padding: 100px;
 }
-.main-heading h2{
+.main-heading h2 {
     font-weight: normal;
     font-size: 40px;
     position: relative;
-    margin-bottom: 70px;
     text-transform: uppercase;
+    margin: 0 auto 50px;
 }
-.main-heading h2::before{
+.main-heading h2::before {
     content: '';
     position: absolute;
     bottom: -30px;
@@ -402,8 +402,9 @@ header .form:hover {
     height: 2px;
     background-color: #333;
     transform: translateX(-50%);
+    margin: 0 auto;
 }
-.main-heading h2::after{
+.main-heading h2::after {
     content: '';
     position: absolute;
     bottom: -38px;
@@ -415,6 +416,23 @@ header .form:hover {
     transform: translateX(-50%);
     background-color: white;
 }
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .main-heading h2 {
+        font-size: 30px; /* Adjust font size */
+        margin: 0 auto 30px; /* Adjust margin */
+    }
+    .main-heading h2::before {
+        bottom: -20px; /* Adjust position */
+        width: 100px; /* Adjust width */
+    }
+    .main-heading h2::after {
+        bottom: -28px; /* Adjust position */
+        width: 12px; /* Adjust size */
+        height: 12px; /* Adjust size */
+    }
+}
 .main-heading p {
     width: 550px;
     margin: 0 auto 100px;
@@ -422,6 +440,17 @@ header .form:hover {
     line-height: 2;
     color: #777;
 }
+@media (max-width: 767px) {
+    .main-heading h2 {
+        font-size: 30px;
+    }
+    .main-heading p {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+
 /* end components */
 /*start services */
 /* end components */
@@ -600,7 +629,7 @@ header .form:hover {
     .portfolio .shuffle li{
         font-size: 15px;
         margin:0 5px;
-        padding: 5px;
+        padding: 2px;
     }
 }
 .portfolio .shuffle li.active{

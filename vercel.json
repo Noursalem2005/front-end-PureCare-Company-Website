@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "main.py",
@@ -7,8 +8,14 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "main.py"
+      "src": "/submit-form",
+      "methods": ["POST"],
+      "dest": "/main.py"
+    },
+    {
+      "src": "/submit-contact-form",
+      "methods": ["POST"],
+      "dest": "/main.py"
     }
   ]
 }

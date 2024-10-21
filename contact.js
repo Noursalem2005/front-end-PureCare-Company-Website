@@ -13,14 +13,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     medical_issue: formData.get('medical_issue'),
                     preferred_contact: formData.get('preferred_contact')
                 };
-                    const response = await fetch('https://html-css-js-2nd-project.vercel.app/?vercelToolbarCode=SAo4_LhGccYlSeL', {
+
+                try {
+                    const response = await fetch('back-isormi0ds-noursalem2005s-projects.vercel.app', { // Updated to the correct endpoint
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(data)
                     });
-                    
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        console.error('Error:', errorData);
+                        alert('Submission failed: ' + errorData.error || 'An unknown error occurred.');
+                    } else {
+                        const result = await response.json();
+                        console.log(result);
+                        alert('Form submitted successfully!');
+                        form.reset(); // Optionally reset the form
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    alert('Submission failed: ' + error.message);
+                }
             }
         });
 

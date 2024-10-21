@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: date
         };
 
-            const response = await fetch('http://localhost:8000/submit-contact-form', {
+            const response = await fetch('back-isormi0ds-noursalem2005s-projects.vercel.app', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,4 +1,4 @@
-# 🌟 front-end — PureCare Company Website
+# 🌟 front-end-PureCare-Company-Website
 
 A modern, responsive multi-page website built for **PureCare Nursing Company**, showcasing services, payment options, and contact features.  
 The website offers a clean design, interactive elements, and seamless navigation for a great user experience.
@@ -51,15 +51,15 @@ Built using:
 
 ## 🚀 Live Preview
 
-👉 [Visit the Live Website]([https://noursalem2005.github.io/front-end/](https://noursalem2005.github.io/front-end-PureCare-Company-Website/))
+👉 [Visit the Live Website](https://noursalem2005.github.io/front-end-PureCare-Company-Website/)
 
 ---
 
 ## 🎯 How to Use Locally
 
 1. **Clone the repository**  
-   👉 [GitHub Repository Link]([https://github.com/Noursalem2005/front-end](https://noursalem2005.github.io/front-end-PureCare-Company-Website/))
+   👉 [GitHub Repository Link](https://github.com/Noursalem2005/front-end-PureCare-Company-Website)
 
    ```bash
-   git clone https://github.com/Noursalem2005/front-end.git
-   cd front-end
+   git clone https://github.com/Noursalem2005/front-end-PureCare-Company-Website.git
+   cd front-end-PureCare-Company-Website
